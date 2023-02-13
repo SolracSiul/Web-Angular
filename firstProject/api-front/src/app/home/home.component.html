@@ -1,0 +1,36 @@
+<div class="container">
+    <form action="">
+    <img src="../../assets/cliente.png" alt="">
+    <div class="container-div-data">
+        <input type="text" placeholder="Nome" name="nome" [(ngModel)]="usuario.nome">
+        <input type="number" placeholder="Idade" name="idade" [(ngModel)]="usuario.idade">
+        <input type="text" placeholder="Cidade" name="cidade" [(ngModel)]="usuario.cidade">
+    </div>
+    <div class="container-div-button">
+        <input type="button" *ngIf="btnCadastro" value="Cadastrar" (click)="cadastrar()">
+        <input type="button" *ngIf="!btnCadastro" value="Alterar">
+        <input type="button" *ngIf="!btnCadastro" value="Remover">
+        <input type="button" *ngIf="!btnCadastro" value="Cancelar">
+    </div>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Cidade</th>
+                <th>Selecionar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of usuarios; index as i">
+                <td>{{i+1}}</td>
+                <td>{{x.nome}}</td>
+                <td>{{x.idade}}</td>
+                <td>{{x.cidade}}</td>
+                <td><button class="btn-table">Selecionar</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
