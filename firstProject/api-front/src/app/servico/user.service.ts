@@ -22,5 +22,13 @@ export class UserService {
     cadastrar(obj:User):Observable<User>{
       return this.http.post<User>(this.url, obj)
     }
+    //Método para editar clientes
+    editar(obj:User):Observable<User>{
+      return this.http.put<User>(this.url, obj)
+    }
+    //Método para remover clientes
+    remover(codigo:number):Observable<void>{
+      return this.http.delete<void>(this.url + codigo)
+    }
   
 }

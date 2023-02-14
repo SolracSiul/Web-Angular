@@ -8,12 +8,12 @@
     </div>
     <div class="container-div-button">
         <input type="button" *ngIf="btnCadastro" value="Cadastrar" (click)="cadastrar()">
-        <input type="button" *ngIf="!btnCadastro" value="Alterar">
-        <input type="button" *ngIf="!btnCadastro" value="Remover">
+        <input type="button" *ngIf="!btnCadastro" value="Alterar" (click)="editar()">
+        <input type="button" *ngIf="!btnCadastro" value="Remover" (click)="remover">
         <input type="button" *ngIf="!btnCadastro" value="Cancelar">
     </div>
     </form>
-    <table>
+    <table *ngIf="tabela">
         <thead>
             <tr>
                 <th>id</th>
@@ -29,7 +29,7 @@
                 <td>{{x.nome}}</td>
                 <td>{{x.idade}}</td>
                 <td>{{x.cidade}}</td>
-                <td><button class="btn-table">Selecionar</button></td>
+                <td><button class="btn-table" (click)="selecionarCliente(i)">Selecionar</button></td>
             </tr>
         </tbody>
     </table>
